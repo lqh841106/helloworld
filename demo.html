@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Date对象</title>
+	<style type="text/css">
+		*{ margin: 0px; padding: 0px; }
+		
+		h1{
+			margin-top: 230px;color: blue;
+			
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1 id="p3"></h1>
+	<script type="text/javascript">
+		
+		
+		setInterval(function(){
+			var n = new Date();    //现在时间
+
+			var x = new Date(2018,0,1);
+			var c = x.getTime() - n.getTime();
+			var day = parseInt(c/1000/60/60/24);
+			
+			var hour = parseInt(c/1000/60/60%24);
+			var min = parseInt(c/1000/60%60);
+			var second = parseInt(c/1000%60);
+			console.log(hour);
+			document.getElementById('p3').innerHTML = "时间飞逝！2017年仅剩"+day+"天"+hour+"时"+min+"分<font size='50' color='red'>"+second+"</font>秒";
+		},1000);
+	</script>
+</body>
+</html>
